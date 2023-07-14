@@ -1,0 +1,52 @@
+﻿@page
+@model foodbank_website.Pages.UserRoles.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1 class="page-header">@ViewData["Title"]</h1>
+
+<div class="row justify-content-center">
+    <div style="margin-top: 100px;">
+        <div class="card event-card border-secondary mb-3" style="width: 50rem; padding: 25px;">
+            <div class="row justify-content-center">
+                <h4>Create a Role</h4>
+            </div>
+            <hr />
+
+            <div class="row justify-content-center">
+                <p>
+                    <form method="post">
+                        <label asp-for="NewRole">Name</label><input asp-for="NewRole" class="form-control" /><input type="submit" value="Create Role" class="btn btn-primary float-right" style="margin-top: 20px;" />
+                    </form>
+                </p>
+                <div class="container">
+                    <table class="table" style="margin-top: 30px;">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Role
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Roles)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Name)
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="container float-left">
+            <a asp-page="/UserRoles/Index"> < Back to Roles</a>
+        </div>
+    </div>
+</div>

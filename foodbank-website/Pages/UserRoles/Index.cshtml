@@ -1,0 +1,51 @@
+﻿@page
+@model foodbank_website.Pages.UserRoles.IndexModel
+
+@{
+    ViewData["Title"] = "Roles";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1 class="page-header">@ViewData["Title"]</h1>
+
+<div class="row justify-content-center">
+    <div style="margin-top: 100px;">
+        <div class="card event-card border-secondary mb-3" style="width: 50rem; padding: 30px;">
+            <div class="row justify-content-center">
+                <table class="table" style="margin-top: 30px;">
+                    <thead>
+                        <tr>
+                            <th>
+                                User
+                            </th>
+                            <th>
+                                Roles
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.UserList)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Email)
+                                </td>
+                                <td>
+                                    @Model.GetRoles(item).Result
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="row" style="margin-top: 50px;">
+                <div class="col-6">
+                    <p><a class="btn btn-outline-primary float-left" asp-page="Assign">Assign Role</a></p>
+                </div>
+                <div class="col-6">
+                    <p><a class="btn btn-primary float-right" asp-page="Create">New Role</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

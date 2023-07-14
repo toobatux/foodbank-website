@@ -1,0 +1,40 @@
+﻿@page
+@model foodbank_website.Pages.Events.JoinModel
+@{
+    ViewData["Title"] = "Join";
+}
+
+<h1 class="page-header">@ViewData["Title"]</h1>
+
+<div class="row justify-content-center">
+    <div style="margin-top: 100px; margin-bottom: 100px;">
+        <form method="post">
+            <div class="card border-secondary mb-3" style="width: 50rem; padding: 25px;">
+                @if (Model.CurrentUserIsInEvent)
+                {
+                    <div>You are in this event</div>
+                    <div class="row mt-5">
+                        <div class="col-6">
+                            <input type="submit" value="Leave Event" class="btn btn-outline-danger" />
+                        </div>
+                        <div class="col-6">
+                            <a asp-page="../AllEvents" class="btn btn-primary float-right">OK</a>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div>You are not in this event</div>
+                    <div class="row mt-5">
+                        <div class="col-6">
+                            <a asp-page="../AllEvents" class="btn btn-outline-secondary">Back</a>
+                        </div>
+                        <div class="col-6">
+                            <input type="submit" value="Join Event" class="btn btn-success float-right" />
+                        </div>
+                    </div>
+                }
+            </div>
+        </form>
+    </div>
+</div>

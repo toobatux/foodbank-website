@@ -1,0 +1,48 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<link rel="stylesheet" href="~/css/site.css" />
+
+<div class="index-header">
+    <h1 class="display-4 index-header-title">Strengthening Communities</h1>
+    <h3 class="index-header-subtitle">Making sure everyone has enough to eat.</h3>
+</div>
+
+<div class="container" style="border-radius: 20px; margin-top: -200px">
+    <div class="row">
+        <div class="col">
+            <div class="card w-35">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: #0B5394">Support</h5>
+                    <p class="card-text">Give to those who need it most in your community.</p>
+                    <a asp-page="/About" class="btn btn-outline-secondary float-right">DONATE</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card w-35">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: #0B5394">Here to help!</h5>
+                    <p class="card-text">Locate the nearest pantry or view upcoming distributions.</p>
+                    <a asp-page="/AllEvents" class="btn btn-outline-secondary float-right">FIND FOOD</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container" style="border-radius: 20px; margin-top: 100px;">
+    <div class="card w-35">
+        <div class="card-body" style="padding: 40px;">
+            <h1 class="card-title" style="color: #0B5394">Welcome!</h1>
+            <div class="card-text mt-5">
+                <p>To sign up for an event, make an account or login.</p>
+                <p>If you would like to donate, view our upcoming events on the 'Events' page!</p>
+            </div>
+        </div>
+    </div>
+</div>
